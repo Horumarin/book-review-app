@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'書籍詳細 - ' + ${book.title}">書籍詳細</title>
+</head>
+<body>
+    <h1 th:text="${book.title}">書籍タイトル</h1>
+    <ul>
+        <li><strong>発行日：</strong> <span th:text="${book.date}">2025-05-06</span></li>
+        <li><strong>価格：</strong> <span th:text="${book.price}">1200</span> 円</li>
+        <li><strong>内容：</strong> <p th:text="${book.contents}">説明文</p></li>
+    </ul>
+
+    <hr/>
+
+    <a th:href="@{/book/{id}/edit(id=${book.id})}">編集</a> |
+    <a th:href="@{/book/{id}/delete(id=${book.id})}">削除</a> |
+    <a th:href="@{/book/list}">一覧に戻る</a>
+</body>
+</html>
